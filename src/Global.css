@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body * {
+  font-family: 'Roboto', serif;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  grid-template-areas:
+    'header header'
+    'hero hero'
+    'sidebar main'
+    'footer footer';
+}
+
+#header {
+  grid-area: header;
+}
+
+#hero {
+  grid-area: hero;
+}
+
+#sidebar {
+  grid-area: sidebar;
+}
+
+#main {
+  grid-area: main;
+}
+
+#footer {
+  grid-area: footer;
+}
+
+@media (max-width: 1024px) {
+  #container {
+    display: flex;
+    flex-direction: column;
+    grid-area: unset;
+  }
+}
